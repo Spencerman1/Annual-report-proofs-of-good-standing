@@ -1,0 +1,136 @@
+Delivered-To: spencersouthern12@gmail.com
+Received: by 2002:a05:6f02:48c:b0:10f:b17f:1669 with SMTP id h12csp10160417rcc;
+        Sat, 6 Dec 2025 03:09:25 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IF2A7PflzYrSCN6Px8sIIEjK6rDBqJDwruU1HRhpzEwg6Eswj7H7desGS+Ndkvio5TcTQFW
+X-Received: by 2002:a05:690c:34ca:b0:786:506c:3cba with SMTP id 00721157ae682-78c33afa473mr18969747b3.13.1765019364779;
+        Sat, 06 Dec 2025 03:09:24 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765019364; cv=none;
+        d=google.com; s=arc-20240605;
+        b=Dtf/YRAADEecgnzZFoJKsc65S3145taXOyNjVqx1SmjkjNUVqMDEEgTCalijXZ7xOa
+         AdPUUJU/1V0JIjtgvNQFPjdmKCngL5jYvwiGisQ5tjEv+dK4gYi3/wNd9f3E0LdjV1x3
+         vqZ/K0Jd2jeCEvFBjdQ+qmO7XrZTOHI3w2hkEGE6X745QdElJqp50Sznt9jEXwmtDjM3
+         a+wT04X5QJ+msQ5Kxen5tHHGF0gS+alnbYz/WDnaUc7PVlq+LOn6v/YbBGoAcnPiTo3Q
+         v/qKiAvHuWV82MO3SyC+U3y+h9n+VWFkmiYtKOzU4/QYsuJPPPXLixnHi6d4RF4QFY8T
+         ZMxA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=message-id:content-transfer-encoding:subject:date:to:from
+         :mime-version:dkim-signature:dkim-signature;
+        bh=m2nAQY5HWfJe2heJqSgDk4phQPC4Qc5PCbwD0xZm/sA=;
+        fh=c6XWP2a8Zi0Z+7I7lxsEW19yJPZFZtqXLYmEDubjBRE=;
+        b=eG9zzhxV2VfhO2akBJn7eT8FVWIgSD8j/kRq4VO1oeJnjzisSSjSkDEV8oG/Z0Ix2B
+         GOq9RnyLgiQmhxsYQVing4QdtE9RrdJRdFMStxoW9VRU4xe6Q7QP3s8Fi2GaQIEi/zaG
+         6o9nMAUGBozKcBn0v9Mv/nvo+WfEXcbDXWOZmGV7LcuxdEAtuoWBmm2fafVxGQM8p/7M
+         6XGs2aJo+vnUP2kJQnGwdzk4V9eDvXLcCPCn4wXxVERGQFF7CCnaU4lPcCsdi2pNQVs+
+         Uhd9i76q8MjmvKU9PVm3dbjVfi50iYYIDHcecZ53b+GfxUsiLWL5FIFBevwjK+ROrVVs
+         yY0g==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fiserv.com header.s=pod1 header.b=P9QZnkPm;
+       dkim=pass header.i=@fiserv.com header.s=pp-fiserv-201908 header.b=Drp1qXCg;
+       spf=pass (google.com: domain of noreply@fiserv.com designates 205.220.183.227 as permitted sender) smtp.mailfrom=noreply@fiserv.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=fiserv.com
+Return-Path: <noreply@fiserv.com>
+Received: from mx0b-0090d002.pphosted.com (mx0b-0090d002.pphosted.com. [205.220.183.227])
+        by mx.google.com with ESMTPS id 00721157ae682-78c1b4bd627si80650417b3.84.2025.12.06.03.09.24
+        for <spencersouthern12@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 06 Dec 2025 03:09:24 -0800 (PST)
+Received-SPF: pass (google.com: domain of noreply@fiserv.com designates 205.220.183.227 as permitted sender) client-ip=205.220.183.227;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fiserv.com header.s=pod1 header.b=P9QZnkPm;
+       dkim=pass header.i=@fiserv.com header.s=pp-fiserv-201908 header.b=Drp1qXCg;
+       spf=pass (google.com: domain of noreply@fiserv.com designates 205.220.183.227 as permitted sender) smtp.mailfrom=noreply@fiserv.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=fiserv.com
+Received: from pps.filterd (m0381482.ppops.net [127.0.0.1])
+	by mx0b-0090d002.pphosted.com (8.18.1.2/8.18.1.2) with ESMTP id 5B66uRWm001747
+	for <spencersouthern12@gmail.com>; Sat, 6 Dec 2025 06:09:24 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fiserv.com; h=
+	content-transfer-encoding:content-type:date:from:message-id
+	:mime-version:subject:to; s=pod1; bh=m2nAQY5HWfJe2heJqSgDk4phQPC
+	4Qc5PCbwD0xZm/sA=; b=P9QZnkPm7a1sVlYuZK1IyQvqjzkQaEluEzemZguF4uQ
+	L05D133BKH9rDNz8G8kFSmx0sfSRa5qreCnGbKIT5/sZqV06oe901SkbKltfMHSC
+	/VNjw8/jg854jmQcEiYJXpJim9Ivm+O5kF05pAJt15qJN4niIV6Z7sMl37LKuTaO
+	JUa3BeO2jPODMRGpzq7obd9bD+2oWW1FktGRzqYK1nzb3xiV2LhANvKGqY/HPtva
+	NwQZVLIOGhVyZaNSvhqp0cB7uozSyinJMbyBoQjGm66Eh1yHqxMgRIVyyGZEct3v
+	lo4YGTSon8dlvglDO0l4q0Wk23s9pfKIz5gnm5NnXcA==
+Received: from x3pvtl1013.firstdata.com (x3pvtl1013.firstdata.com [208.72.249.245])
+	by mx0b-0090d002.pphosted.com (PPS) with ESMTPS id 4auj478v0r-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <spencersouthern12@gmail.com>; Sat, 06 Dec 2025 06:09:24 -0500 (EST)
+Received: from pps.filterd (x3pvtl1013.1dc.com [127.0.0.1])
+	by x3pvtl1013.1dc.com (8.18.1.2/8.18.1.2) with ESMTP id 5B69khAj023652
+	for <spencersouthern12@gmail.com>; Sat, 6 Dec 2025 06:09:23 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fiserv.com;
+ h=content-transfer-encoding : content-type : date : from : message-id :
+ mime-version : subject : to; s=pp-fiserv-201908;
+ bh=m2nAQY5HWfJe2heJqSgDk4phQPC4Qc5PCbwD0xZm/sA=;
+ b=Drp1qXCg0jFAjICtZv33JfHU5G+a2yt/FiXwc6CcFPQlelRBcQbq3GV/CGDDa/zhXyB1
+ u0Zm0FoI7smxk6Ax6DyALnBNhssOTubyX7/2f0MIBOFaIssnvacxWaDgx21XY4SYUxDQ
+ iMdlKrs3srzKZw5MspFFq6w3qqf/+yuVMf7bFU+yz6DG2EZ7oIYzZIGK/RalJTir44LX
+ nn5uq5bUd8RtgT2UflPuT277oimi2e/T6+Chg2S0RTNTXWapY6wNoUeDc1vkODievoq/
+ hMp6e9ED3OVOLd1232H1L4MwT2lpVSJ3YsvtqdvOsZfosPTuWbkyUzZ02sZFPd2M7LWJ EQ== 
+Received: from x1pvtl1129.1dc.com (X1PVTL1129.1dc.com [10.191.24.100])
+	by x3pvtl1013.1dc.com (PPS) with ESMTPS id 4avj59r30w-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <spencersouthern12@gmail.com>; Sat, 06 Dec 2025 06:09:23 -0500
+Received: from pps.filterd (x1pvtl1129.1dc.com [127.0.0.1])
+	by x1pvtl1129.1dc.com (8.18.1.2/8.18.1.2) with ESMTP id 5B61XlhZ024924
+	for <spencersouthern12@gmail.com>; Sat, 6 Dec 2025 03:04:36 -0800
+Received: from x1pvtl1124.1dc.com ([10.187.129.0])
+	by x1pvtl1129.1dc.com (PPS) with ESMTPS id 4ar1aq5vgm-1
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <spencersouthern12@gmail.com>; Sat, 06 Dec 2025 03:04:36 -0800
+Received: from pps.filterd (x1pvtl1124.1dc.com [127.0.0.1])
+	by x1pvtl1124.1dc.com (8.18.1.2/8.18.1.2) with ESMTP id 5B69xEMa029905
+	for <spencersouthern12@gmail.com>; Sat, 6 Dec 2025 06:09:22 -0500
+Received: from w3pvap1736 ([10.178.250.254])
+	by x1pvtl1124.1dc.com (PPS) with ESMTPS id 4avjba8605-3
+	(version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+	for <spencersouthern12@gmail.com>; Sat, 06 Dec 2025 06:09:22 -0500
+MIME-Version: 1.0
+From: noreply@fiserv.com
+To: spencersouthern12@gmail.com
+Date: 6 Dec 2025 06:09:22 -0500
+Subject: Payment Confirmation
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <4avjba8605-3@x1pvtl1124.1dc.com>
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-12-06_02,2025-12-04_04,2025-10-01_01
+X-Proofpoint-ORIG-GUID: XGEmkceW1R_kyIaWBNlZxmN6cnit5dOy
+X-Proofpoint-GUID: XGEmkceW1R_kyIaWBNlZxmN6cnit5dOy
+X-Authority-Analysis: v=2.4 cv=AKLTt4sb c=1 sm=1 tr=0 ts=69340ee4 b=1 cx=c_pps
+ a=RTqQH0Cttbc1iKYAOYNbyw==:117 a=RTqQH0Cttbc1iKYAOYNbyw==:17
+ a=kj9zAlcOel0A:10 a=wP3pNCr1ah4A:10 a=WVSIkJScxn0A:10 a=g8TUdU_LZmEA:10
+ a=VkNPw1HP01LnGYTKEx00:22 a=qCRKDp-PuzteLm5AKoAA:9 a=CjuIK1q_8ugA:10
+ a=zgiPjhLxNE0A:10 a=HfyFVp22XKucecNSUoLp:22 cc=ntf awl=host:22395
+X-Proofpoint-Spam-Details-Enc: AW1haW4tMjUxMjA0MDE3MiBTYWx0ZWRfX5r0YOuC772Zu
+ KnxC8AyDqwdavhiSB/hGUjvhTA0qjaqWSvW/JPhrXcD9LeruQuI8qsgyvqfiu8XSftir59635Zi
+ s2PNcADG3K9v4JX3j7+GDKSQyP/ZWAfnv0UnVVL8Ts4mbmdX84mzJDnu1UeZ6pujPabpRGAeCXJ
+ Lc0feyLKGucNSyKKSF9I7CQSnSO9Dk2+jgoOlZyTOL5PQzQFK6Fr7qOd7HZRE1aYvrNivQF73eO
+ oK+aFFJmUJfADQyKyiHe6j7env3755jG+e/BzWK9UhWjuBEnIO/9P+z43MKRGlTNzQ2peBPOvgv
+ uta+XJ38jpQ+4UAE74GERjA+1P7svfxmpAu+Krn46IGz6uH0bog6+ECgJrjVmM=
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.293,Aquarius:18.0.1121,Hydra:6.1.9,FMLib:17.12.100.49
+ definitions=2025-12-06_02,2025-12-04_04,2025-10-01_01
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 phishscore=0
+ adultscore=0 lowpriorityscore=0 malwarescore=0 spamscore=0 suspectscore=0
+ bulkscore=0 classifier=typeunknown authscore=0 authtc= authcc=notification
+ route=outbound adjust=0 reason=mlx scancount=1 engine=8.19.0-2510240000
+ definitions=main-2512040172
+
+Thank you for your recent payment to the MiBusiness Registry Port=
+al.=0D=0A=0D=0AAfter a document is filed, it is available at mich=
+igan.gov/corpentitysearch. =0D=0A=0D=0AIf you have questions, ple=
+ase contact the Michigan Corporations Division 517-241-6470.=0A=0A=
+Payment Application: MI CORPORATIONS DIV=0APayment Status: Paymen=
+t completed successfully.=0AConfirmation Number: 25120659046249=0A=
+Payment Date: 12/06/2025=0A-------------------- =0ABilling Addres=
+s: Spencer Southern=0A                 333 E Bristol Rd=0A       =
+          Delton, MI 490467691=0A                 2693318435=0A--=
+------------------ =0ACard Type: VISA=0ACard Number: x0984=0A----=
+---------------- =0APayment Amount: 25.00 USD=0ATotal Amount: 25.=
+00 USD=0A-------------------- =0AReference: 367963=0A=0ADO NOT RE=
+PLY DIRECTLY TO THIS EMAIL.
+

@@ -1,0 +1,162 @@
+Delivered-To: spencersouthern12@gmail.com
+Received: by 2002:a05:6f02:48c:b0:10f:b17f:1669 with SMTP id h12csp10160618rcc;
+        Sat, 6 Dec 2025 03:09:58 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGNHHpl4xgWsjac12Jz20Ck6O4SABjFP89qkiafxTbGJuXuLzQLVj0+Txi15O8NUUhAhJPm
+X-Received: by 2002:a05:6a20:7350:b0:35f:46d3:f27a with SMTP id adf61e73a8af0-36617e36c74mr2218343637.5.1765019397893;
+        Sat, 06 Dec 2025 03:09:57 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1765019397; cv=none;
+        d=google.com; s=arc-20240605;
+        b=VCw6csgSnwbJYWAeC+Q635hTJGAxX0OoiQl3HBHWdXk67QeI6u1Qg6UM5JQiZiWEEj
+         cMMeRLJfXHZTJzZqrN+tuNo7bqpAhDGvMMn/khSeHI9IEt9+7pKGRf9/vXcjqf8MCNBp
+         zKeDWyXWvSNBMbErrtvAsyyKmCv4imNn1+HR/UL+c+/DErRzu/Twn8LMyqZzr6aTwjFa
+         MlNBBZuAsSeayEeIo8Pi5XACYOeL7LRfsA+R5Vv9CMxilrRyD9DshSJMCVPBGYG+WlNk
+         fKdzxb6+NUVqkSB4pxm2BLUupahjBadxQ0YYGZIT3HRLfzJKrwMhAf15wWzmpDBnIptn
+         aRiw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=PRSWmBc8FOKi/hwwV+10HiY8yLIS8dFPCBGklXDGvck=;
+        fh=c6XWP2a8Zi0Z+7I7lxsEW19yJPZFZtqXLYmEDubjBRE=;
+        b=PXyLSzMoZt0XBC5ZkcA610bhqZ8N3bKpqF60YNxtG2whYjsiphy2jz7xv5+zhm4+ed
+         D7IzUSUg1P9qOl/Kk9IxB74nD59r+PjWAWIO+AEVpjpXwOLGJtJ6ClyHmXM3trpcKrLg
+         uA3qL/If84X1u739cF+sYWcX5DJHWk7QPA2iTfEUcKdZHkX7ILgPB0gVGFPhUOqsa9od
+         pMG9y4IvzkSLu2QOZwYftlGcslerwkdNS7EQ+JuFKZ7q34FpJ3J3ovz+5oZs5dSDzTEl
+         uB4Q0PWa5WJxdOtTAgIpYMocfxsQZvG/56IWKDPzZugutsJCidzuIXgIKBIr5YDx4NuQ
+         XGfQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.michigan.gov header.s=s1 header.b=J8JzNdCL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fn5N7tNp;
+       spf=pass (google.com: domain of bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov designates 159.183.215.230 as permitted sender) smtp.mailfrom="bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.michigan.gov
+Return-Path: <bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov>
+Received: from o2.alerts.michigan.gov (o2.alerts.michigan.gov. [159.183.215.230])
+        by mx.google.com with ESMTPS id 41be03b00d2f7-bf6a2748031si3109433a12.486.2025.12.06.03.09.57
+        for <spencersouthern12@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 06 Dec 2025 03:09:57 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov designates 159.183.215.230 as permitted sender) client-ip=159.183.215.230;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.michigan.gov header.s=s1 header.b=J8JzNdCL;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=fn5N7tNp;
+       spf=pass (google.com: domain of bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov designates 159.183.215.230 as permitted sender) smtp.mailfrom="bounces+43695498-5aba-spencersouthern12=gmail.com@em8567.mail.michigan.gov";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.michigan.gov
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=mail.michigan.gov;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=s1; bh=PRSWmBc8FOKi/hwwV+10HiY8yLIS8dFPCBGklXDGvck=;
+	b=J8JzNdCLbi2SZBVGmmo2u5zhaws30qX5QfvuCc2vDw1EPXI20RbeqUG5gdyJ7n7GWAal
+	ssie2kO6xmipDOM4VQ7oqidgk6btGfJ6uBliFs2MVrLwjqrWO4yQC32XvUm7LkFG807LkO
+	RS6JRgAfk2D4acpu9u4gMpRZ66teCNjN35rGsnhYaR/5ACpMcTnIKs9WHPMFvJERW/0H0M
+	MYtQgnzEFZ0pLEfe2BxaNPtvjbrPQuLZJyS6xkH+I/KFJ85LpmGqkYMpM8q9E5d08powyf
+	uhGVvWburq/dJUpXHtEZlFUCLSol3Q7yyZsj5UrsYunIard+3ewrv89zNsjcHghQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:date:from:mime-version:subject:
+	to:cc:content-type:date:feedback-id:from:subject:to;
+	s=smtpapi; bh=PRSWmBc8FOKi/hwwV+10HiY8yLIS8dFPCBGklXDGvck=;
+	b=fn5N7tNpW63OaIIQqcty7s7+0br/VAvKkdyBbwd7G7nSJbNXLAKrjOrTnrRN2XYVL60e
+	VinjgfxHcLCUNqakekOMRIM5zSRLU/ZGIaGlmbl32v+PtYlgAT/nBteH/bNNQeZqwmm+JD
+	HqVspEAycR8PXiY4aHhbvPG911L/ZtcDM=
+Received: by recvd-76dbf98688-568vt with SMTP id recvd-76dbf98688-568vt-1-69340F04-21
+	2025-12-06 11:09:56.361995333 +0000 UTC m=+15964606.807330538
+Received: from NDM2OTU0OTg (unknown)
+	by geopod-ismtpd-16 (SG) with HTTP
+	id OPdBf8SBS7awJ1ZNMJXqHw
+	Sat, 06 Dec 2025 11:09:56.337 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Sat, 06 Dec 2025 11:09:56 +0000 (UTC)
+From: noreply-micorporationsdivision@mail.michigan.gov
+Mime-Version: 1.0
+Message-ID: <OPdBf8SBS7awJ1ZNMJXqHw@geopod-ismtpd-16>
+Subject: Document Approval Confirmation =?UTF-8?B?4oCT?= MiBusiness Registry
+ Portal
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EwgPQEA+gt=2F9mQv4JaEv+7Sw2QW5nO3TwC=2F=2FD0QfdLRgk1QebpzeIpf74P?=
+ =?us-ascii?Q?lxS+Su0jDXZWUYOzAS+qYtp4SRrNunEzikHLASR?=
+ =?us-ascii?Q?YW=2FeA6oow2nUiQHKSPO9xr=2FxKs+SnAjbqkl3PKO?=
+ =?us-ascii?Q?EAlSrVuGxPkLEqT4p9M499xjjWDlo0a1fq3lOSR?=
+ =?us-ascii?Q?yyIh374N4kHnP+rAu1MBCTpegMHVPDZtq8YGtav?=
+ =?us-ascii?Q?CR1KCPumWagcYNda6DgHO0s6tPmpTUg=2FYOhdY=2FP?=
+ =?us-ascii?Q?qgnt?=
+To: spencersouthern12@gmail.com
+X-Entity-ID: u001.naIkMTNLQmO6biuIbQ5B6A==
+
+<html>
+  <head>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12pt;
+      }
+    </style>
+  </head>
+  <body>   =20
+    <p style=3D"font-size:14pt"><b>Notice of Approval</b></p>
+    <p style=3D"margin: 0px; padding: 0px;"><b>Michigan Department of Licen=
+sing and Regulatory Affairs</b></p>
+    <p style=3D"margin: 0px; padding: 0px;">Corporations, Securities & Comm=
+ercial Licensing Bureau</p>
+    <p style=3D"margin: 0px; padding: 0px;">Corporations Division</p>
+    <p>December 06, 2025</p>
+    <p style=3D"margin: 0px; padding: 0px;"><b>Entity Name:</b> SOUTHERN ST=
+AR PRO. STUDIOS L.L.C.</p>   =20
+    <p style=3D"margin: 0px; padding: 0px;"><b>Identification Number:</b> 8=
+03150950</p>
+    <p style=3D"margin: 0px; padding: 0px;"><b>Document Type:</b> 2025 Annu=
+al Statement</p>  =20
+    <p style=3D"margin: 0px; padding: 0px;"><b>Filed Date:</b> 12/6/2025</p=
+>
+    <p>Thank you for your recent submission through the MiBusiness Registry=
+ Portal. The referenced document has been approved and filed with the Corpo=
+rations Division. Please follow the instructions below to access the filed =
+document.</p>
+    <p>Please note:</p>
+    <ul>
+	<li>Downloads are available in the My Work Queue for <b>60 days</b>.</li>
+	<li>When a certificate accompanies a filed document, promptly download and=
+ save it to your device via the My Work Queue. After 60 days, the certifica=
+te will no longer be accessible to you or the public.</li>
+    </ul>
+    <p><b>Access and Download Filed Document</b></p>
+    <p><b>My Work Queue:</b></p>
+    <ol>
+        <li>Visit: <a href=3D"https://michigan.gov/corpfileonline">www.mich=
+igan.gov/corpfileonline</a></li>
+        <li>Click <b>Login</b> (top right) and sign in to the Portal via Mi=
+Login for Business.</li>
+        <li>Click on the <b>My Work Queue</b> tab &gt; <b>Business</b> head=
+ing.</li>
+        <li>Locate the document with the <b>Approved</b> status.</li>
+        <li>Click the <b>Download</b> icon in the <b>Actions</b> column.</l=
+i>
+        <li>The slide drawer will provide the available downloads.</li>
+        <li>Download and save the available files to your device.</li>
+    </ol>
+    <p><b>Business Search:</b></p>
+    <ol>
+        <li>Visit: <a href=3D"https://www.michigan.gov/corpentitysearch">ww=
+w.michigan.gov/corpentitysearch</a></li>
+        <li>Search by entity name or identification number.</li>
+        <li>Click on the search results to open the slide drawer.</li>
+        <li>Click the <b>View History &amp; Filing</b> icon to display the =
+filing history.</li>
+        <li>Expand the filing associated with this approval notice.</li>
+        <li>Locate the <b>Image Download</b> details and click on the <b>Do=
+wnload</b> button.</li>
+        <li>The endorsed document will download to your device.</li>
+    </ol>
+    <p><b>Additional Resources</b></p>
+    <ul>
+        <li><b>Michigan Business Roadmap:</b> <a href=3D"https://michigan.g=
+ov/businessroadmap">www.michigan.gov/businessroadmap</a></li>
+        <li><b>Michigan Small Business Development Center:</b> <a href=3D"h=
+ttps://michigansbdc.org">www.michigansbdc.org</a></li>
+    </ul>
+    <p>For further assistance, contact the Corporations Division at (517) 2=
+41-6470 or by email <a href=3D"mailto:corpsmail@michigan.gov">corpsmail@mic=
+higan.gov</a>.</p>
+    <p><i>This message was sent from an unmonitored email address. <b>Pleas=
+e do not reply.</b></i></p>=20
+  </body>
+</html>
